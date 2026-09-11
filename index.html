@@ -1,1 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veralto | Café de Especialidad</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- FontAwesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
 
+    <!-- Header & Navegación -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="#" class="logo">VERALTO<span>.</span></a>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#nosotros">Historia</a></li>
+                <li><a href="#tienda">Tienda</a></li>
+                <li><a href="#proceso">Proceso</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="cart-btn" id="cartToggle">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Sidebar Carrito de Compras -->
+    <aside class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Tu Carrito</h3>
+            <button class="close-cart" id="closeCart">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <p class="empty-msg">El carrito está vacío</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">$0.00</span>
+            </div>
+            <button class="btn btn-primary btn-block">Proceder al Pago</button>
+        </div>
+    </aside>
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero-content fade-in-up">
+            <span class="subtitle">100% Arábica de Origen</span>
+            <h1>El arte del café perfecto en cada grano</h1>
+            <p>Cultivado en las altas montañas, tostado con precisión artesanal para despertar tus sentidos.</p>
+            <div class="hero-buttons">
+                <a href="#tienda" class="btn btn-primary">Comprar Ahora</a>
+                <a href="#nosotros" class="btn btn-secondary">Conocer Más</a>
+            </div>
+        </div>
+        <div class="hero-image pulse-glow">
+            <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=800&auto=format&fit=crop" alt="Taza de café Veralto">
+        </div>
+    </section>
+
+    <!-- Características -->
+    <section class="features">
+        <div class="feature-card reveal-on-scroll">
+            <i class="fa-solid fa-seedling"></i>
+            <h3>Origen Orgánico</h3>
+            <p>Granos cosechados a mano bajo prácticas sostenibles y amigables con el medio ambiente.</p>
+        </div>
+        <div class="feature-card reveal-on-scroll">
+            <i class="fa-solid fa-fire-flame-curved"></i>
+            <h3>Tueste Artesanal</h3>
+            <p>Perfiles de tueste optimizados para resaltar las notas naturales de cada variedad.</p>
+        </div>
+        <div class="feature-card reveal-on-scroll">
+            <i class="fa-solid fa-truck-fast"></i>
+            <h3>Envío FRESCO</h3>
+            <p>Tostamos semanalmente para garantizar la máxima frescura en tu mesa.</p>
+        </div>
+    </section>
+
+    <!-- Historia / Nosotros -->
+    <section id="nosotros" class="about">
+        <div class="about-img float-anim reveal-on-scroll">
+            <img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?q=80&w=800&auto=format&fit=crop" alt="Granos de Café Veralto">
+        </div>
+        <div class="about-text reveal-on-scroll">
+            <span class="subtitle">Nuestra Historia</span>
+            <h2>Pasión por la excelencia cafetera</h2>
+            <p>En **Veralto** creemos que el café no es solo una bebida, es una experiencia ritual. Trabajamos directamente con pequeños caficultores, seleccionando solo los frutos en su punto exacto de maduración.</p>
+            <p>Nuestra misión es llevar a tu taza notas aromáticas complejas, cuerpo balanceado y la pureza que solo un origen único puede ofrecer.</p>
+        </div>
+    </section>
+
+    <!-- Tienda / Productos -->
+    <section id="tienda" class="products">
+        <div class="section-title reveal-on-scroll">
+            <span class="subtitle">Nuestra Selección</span>
+            <h2>Cafés de Especialidad</h2>
+        </div>
+        <div class="product-grid">
+            
+            <!-- Producto 1 -->
+            <div class="product-card reveal-on-scroll">
+                <div class="product-badge">Más Vendido</div>
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?q=80&w=500&auto=format&fit=crop" alt="Veralto Origen Suave">
+                </div>
+                <div class="product-info">
+                    <h3>Veralto Origen Suave</h3>
+                    <p class="notes">Notas: Chocolate de mesa, Caramelo, Cítricos dulce</p>
+                    <div class="price-action">
+                        <span class="price">$14.50</span>
+                        <button class="btn-add" onclick="addToCart('Veralto Origen Suave', 14.50)">
+                            <i class="fa-solid fa-plus"></i> Agregar
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 2 -->
+            <div class="product-card reveal-on-scroll">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1587734195503-904fca47e0e9?q=80&w=500&auto=format&fit=crop" alt="Veralto Tueste Oscuro">
+                </div>
+                <div class="product-info">
+                    <h3>Veralto Tueste Intenso</h3>
+                    <p class="notes">Notas: Cacao amargo, Frutos secos, Especias</p>
+                    <div class="price-action">
+                        <span class="price">$15.00</span>
+                        <button class="btn-add" onclick="addToCart('Veralto Tueste Intenso', 15.00)">
+                            <i class="fa-solid fa-plus"></i> Agregar
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 3 -->
+            <div class="product-card reveal-on-scroll">
+                <div class="product-badge">Edición Limitada</div>
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1611854779393-1b2da9d400fe?q=80&w=500&auto=format&fit=crop" alt="Veralto Geisha Reserva">
+                </div>
+                <div class="product-info">
+                    <h3>Veralto Reserva Especial</h3>
+                    <p class="notes">Notas: Jasmine, Bergamota, Miel silvestre</p>
+                    <div class="price-action">
+                        <span class="price">$22.00</span>
+                        <button class="btn-add" onclick="addToCart('Veralto Reserva Especial', 22.00)">
+                            <i class="fa-solid fa-plus"></i> Agregar
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contacto" class="footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <a href="#" class="logo text-white">VERALTO<span>.</span></a>
+                <p>Elevando el estándar del café de especialidad todos los días.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#nosotros">Historia</a></li>
+                    <li><a href="#tienda">Tienda</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Síguenos</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Veralto Coffee. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="js/main.js"></script>
+</body>
+</html>
