@@ -3,7 +3,7 @@
    ========================================================================== */
 // [CONFIGURACIÓN] Tus credenciales exactas registradas para EmailJS:
 const EMAILJS_PUBLIC_KEY = "pANs_SwfJtc0dwNst";
-const EMAILJS_SERVICE_ID = "service_2du19s8";
+const EMAILJS_SERVICE_ID = "service_mkjt7p6";
 const EMAILJS_TEMPLATE_ID = "template_f982tvu";
 
 // [CONFIGURACIÓN] Número de WhatsApp de destino (Estructura: Código país + Número)
