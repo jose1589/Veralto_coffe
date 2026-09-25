@@ -1,6 +1,5 @@
-/* Animaciones y Efectos Suaves */
+/* KEYFRAMES Y CLASES PARA ANIMACIONES SUAVES */
 
-/* Keyframes para Entrada Suave */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -12,41 +11,24 @@
     }
 }
 
-@keyframes float {
+@keyframes floatImage {
     0% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
+    50% { transform: translateY(-12px); }
     100% { transform: translateY(0px); }
 }
 
-@keyframes pulseGlow {
-    0% {
-        box-shadow: 0 0 0 0 rgba(200, 150, 62, 0.4);
-    }
-    70% {
-        box-shadow: 0 0 0 20px rgba(200, 150, 62, 0);
-    }
-    100% {
-        box-shadow: 0 0 0 0 rgba(200, 150, 62, 0);
-    }
-}
-
-/* Clases de Animación */
 .fade-in-up {
-    animation: fadeInUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+    animation: fadeInUp 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
-.float-anim {
-    animation: float 4s ease-in-out infinite;
+.float-anim .image-wrapper {
+    animation: floatImage 4s ease-in-out infinite;
 }
 
-.pulse-glow img {
-    animation: pulseGlow 3s infinite;
-}
-
-/* Animación de Revelado al hacer Scroll */
+/* Efecto de Revelado al hacer Scroll */
 .reveal-on-scroll {
     opacity: 0;
-    transform: translateY(40px);
+    transform: translateY(35px);
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 

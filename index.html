@@ -3,32 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Veralto | Café de Especialidad</title>
-    <!-- Fonts -->
+    <title>Café Veralto | Origen Curití, Santander</title>
+    
+    <!-- Meta etiquetas para SEO y Redes Sociales -->
+    <meta name="description" content="Café de especialidad 100% Arábica cultivado artesanalmente en las altas montañas de Curití, Santander. Ordena en línea.">
+    
+    <!-- Tipografías de Google Fonts (Playfair Display & Poppins) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <!-- FontAwesome icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Iconos FontAwesome Pro / Free v6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- CSS -->
+    
+    <!-- Hojas de Estilos CSS -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/animations.css">
+
+    <!-- SDK Oficial de EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 <body>
 
-    <!-- Header & Navegación -->
+    <!-- Bar de Anuncio Superior -->
+    <div class="top-bar">
+        <p><i class="fa-solid fa-truck-fast"></i> Envíos a toda Colombia desde Curití, Santander | Pedidos por WhatsApp <i class="fa-brands fa-whatsapp"></i></p>
+    </div>
+
+    <!-- Navegación Principal -->
     <header class="header">
         <nav class="nav-container">
-            <a href="#" class="logo">VERALTO<span>.</span></a>
+            <a href="#" class="logo">
+                <i class="fa-solid fa-mug-hot logo-icon"></i>
+                VERALTO<span>.</span>
+            </a>
             <ul class="nav-links">
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#nosotros">Historia</a></li>
+                <li><a href="#inicio" class="active">Inicio</a></li>
+                <li><a href="#curiti">Origen Curití</a></li>
                 <li><a href="#tienda">Tienda</a></li>
                 <li><a href="#proceso">Proceso</a></li>
-                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#comunidad">Comunidad</a></li>
             </ul>
             <div class="nav-actions">
-                <button class="cart-btn" id="cartToggle">
+                <button class="cart-btn" id="cartToggle" aria-label="Ver Carrito">
                     <i class="fa-solid fa-bag-shopping"></i>
                     <span class="cart-count" id="cartCount">0</span>
                 </button>
@@ -36,94 +53,102 @@
         </nav>
     </header>
 
-    <!-- Sidebar Carrito de Compras -->
-    <aside class="cart-sidebar" id="cartSidebar">
-        <div class="cart-header">
-            <h3>Tu Carrito</h3>
-            <button class="close-cart" id="closeCart">&times;</button>
-        </div>
-        <div class="cart-items" id="cartItems">
-            <p class="empty-msg">El carrito está vacío</p>
-        </div>
-        <div class="cart-footer">
-            <div class="cart-total">
-                <span>Total:</span>
-                <span id="cartTotal">$0.00</span>
-            </div>
-            <button class="btn btn-primary btn-block">Proceder al Pago</button>
-        </div>
-    </aside>
-    <div class="cart-overlay" id="cartOverlay"></div>
-
     <!-- Hero Section -->
     <section id="inicio" class="hero">
+        <div class="hero-overlay"></div>
         <div class="hero-content fade-in-up">
-            <span class="subtitle">100% Arábica de Origen</span>
+            <span class="badge-tag"><i class="fa-solid fa-award"></i> 100% Arábica de Curití, Santander</span>
             <h1>El arte del café perfecto en cada grano</h1>
-            <p>Cultivado en las altas montañas, tostado con precisión artesanal para despertar tus sentidos.</p>
+            <p>Cultivado en las colinas de Curití, tostado con precisión artesanal para despertar tus sentidos con notas intensas de cacao, panela y frutos rojos.</p>
             <div class="hero-buttons">
-                <a href="#tienda" class="btn btn-primary">Comprar Ahora</a>
-                <a href="#nosotros" class="btn btn-secondary">Conocer Más</a>
+                <a href="#tienda" class="btn btn-primary"><i class="fa-solid fa-store"></i> Ver Productos</a>
+                <a href="#curiti" class="btn btn-outline"><i class="fa-solid fa-compass"></i> Nuestra Historia</a>
             </div>
         </div>
-        <div class="hero-image pulse-glow">
-            <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=800&auto=format&fit=crop" alt="Taza de café Veralto">
+        <div class="hero-image float-anim">
+            <div class="image-wrapper">
+                <img src="https://cdn.croper.com/images/6btch2jgagfmq084wotra/original.jpeg" alt="Bolsa de Café Veralto Especialidad">
+                <div class="experience-badge">
+                    <span>1500m</span>
+                    <small>Sobre el nivel del mar</small>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Características -->
+    <!-- Características Rápidas -->
     <section class="features">
         <div class="feature-card reveal-on-scroll">
-            <i class="fa-solid fa-seedling"></i>
-            <h3>Origen Orgánico</h3>
-            <p>Granos cosechados a mano bajo prácticas sostenibles y amigables con el medio ambiente.</p>
+            <div class="icon-box"><i class="fa-solid fa-seedling"></i></div>
+            <h3>Origen Sostenible</h3>
+            <p>Granos cultivados bajo sombra y cosechados a mano por familias caficultoras de Curití.</p>
         </div>
         <div class="feature-card reveal-on-scroll">
-            <i class="fa-solid fa-fire-flame-curved"></i>
-            <h3>Tueste Artesanal</h3>
-            <p>Perfiles de tueste optimizados para resaltar las notas naturales de cada variedad.</p>
+            <div class="icon-box"><i class="fa-solid fa-fire-flame-curved"></i></div>
+            <h3>Tueste Fresco</h3>
+            <p>Tostamos en pequeños lotes cada semana para garantizar el máximo aroma y sabor en tu taza.</p>
         </div>
         <div class="feature-card reveal-on-scroll">
-            <i class="fa-solid fa-truck-fast"></i>
-            <h3>Envío FRESCO</h3>
-            <p>Tostamos semanalmente para garantizar la máxima frescura en tu mesa.</p>
+            <div class="icon-box"><i class="fa-solid fa-hand-holding-heart"></i></div>
+            <h3>Directo del Campo</h3>
+            <p>Sin intermediarios. Apoyas directamente el desarrollo rural de Santander con cada compra.</p>
         </div>
     </section>
 
-    <!-- Historia / Nosotros -->
-    <section id="nosotros" class="about">
-        <div class="about-img float-anim reveal-on-scroll">
-            <img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?q=80&w=800&auto=format&fit=crop" alt="Granos de Café Veralto">
+    <!-- Historia de Curití, Santander -->
+    <section id="curiti" class="curiti-section">
+        <div class="section-title reveal-on-scroll">
+            <span class="subtitle">Tierra de Tejedores y Caficultores</span>
+            <h2>El Origen: Curití, Santander</h2>
+            <div class="divider"></div>
         </div>
-        <div class="about-text reveal-on-scroll">
-            <span class="subtitle">Nuestra Historia</span>
-            <h2>Pasión por la excelencia cafetera</h2>
-            <p>En **Veralto** creemos que el café no es solo una bebida, es una experiencia ritual. Trabajamos directamente con pequeños caficultores, seleccionando solo los frutos en su punto exacto de maduración.</p>
-            <p>Nuestra misión es llevar a tu taza notas aromáticas complejas, cuerpo balanceado y la pureza que solo un origen único puede ofrecer.</p>
+        
+        <div class="curiti-grid">
+            <div class="curiti-card reveal-on-scroll">
+                <div class="curiti-img-box">
+                    <img src="https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcSsn0v541fq0lJt9c7w123d-4i8UnLiLBzJatd8aL0fA_AiDO2eNJaN04-G4-BgR5TX1kjrW6NdTDvTV-A" alt="Pueblo de Curití Santander">
+                </div>
+                <div class="curiti-card-body">
+                    <h3><i class="fa-solid fa-mountain-city"></i> Tradición y Suelo Volcánico</h3>
+                    <p>Curití no solo es famoso por sus artesanías en fique, sino también por poseer microclimas perfectos y suelos ricos en minerales que aportan una acidez brillante y cuerpo aterciopelado al café.</p>
+                </div>
+            </div>
+
+            <div class="curiti-card reveal-on-scroll">
+                <div class="curiti-img-box">
+                    <img src="https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcQ8eyuwiyPlFkeYhBUuHFRry1fkfvLZ835vO2Wa-bXX-4bbX3GDIUuecOOUggeKjok_HLKHgu54Cpv2ieM" alt="Cultivo de Café en Curití">
+                </div>
+                <div class="curiti-card-body">
+                    <h3><i class="fa-solid fa-hand-holding-grain"></i> Recolección 100% Selectiva</h3>
+                    <p>Nuestros recolectores seleccionan manualmente solo los frutos en su punto idóneo de maduración (cerezas rojas), asegurando una taza limpia y homogénea.</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Tienda / Productos -->
+    <!-- Tienda de Productos -->
     <section id="tienda" class="products">
         <div class="section-title reveal-on-scroll">
-            <span class="subtitle">Nuestra Selección</span>
-            <h2>Cafés de Especialidad</h2>
+            <span class="subtitle">Café Fresco Tostado</span>
+            <h2>Nuestra Selección de Especialidad</h2>
+            <div class="divider"></div>
         </div>
+
         <div class="product-grid">
             
             <!-- Producto 1 -->
             <div class="product-card reveal-on-scroll">
                 <div class="product-badge">Más Vendido</div>
                 <div class="product-img">
-                    <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?q=80&w=500&auto=format&fit=crop" alt="Veralto Origen Suave">
+                    <img src="https://cdn.croper.com/images/6btch2jgagfmq084wotra/original.jpeg" alt="Veralto Tradicional Curití">
                 </div>
                 <div class="product-info">
-                    <h3>Veralto Origen Suave</h3>
-                    <p class="notes">Notas: Chocolate de mesa, Caramelo, Cítricos dulce</p>
+                    <h3>Veralto Tradicional (500g)</h3>
+                    <p class="notes"><i class="fa-solid fa-mug-saucer"></i> Notas: Chocolate de mesa, panela y suave toque cítrico.</p>
                     <div class="price-action">
-                        <span class="price">$14.50</span>
-                        <button class="btn-add" onclick="addToCart('Veralto Origen Suave', 14.50)">
-                            <i class="fa-solid fa-plus"></i> Agregar
+                        <span class="price">$28.000 COP</span>
+                        <button class="btn-add" onclick="addToCart('Veralto Tradicional 500g', 28000)">
+                            <i class="fa-solid fa-cart-plus"></i> Agregar
                         </button>
                     </div>
                 </div>
@@ -131,16 +156,17 @@
 
             <!-- Producto 2 -->
             <div class="product-card reveal-on-scroll">
+                <div class="product-badge accent">Edición Especial</div>
                 <div class="product-img">
-                    <img src="https://images.unsplash.com/photo-1587734195503-904fca47e0e9?q=80&w=500&auto=format&fit=crop" alt="Veralto Tueste Oscuro">
+                    <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?q=80&w=500&auto=format&fit=crop" alt="Veralto Edición Especial Santander">
                 </div>
                 <div class="product-info">
-                    <h3>Veralto Tueste Intenso</h3>
-                    <p class="notes">Notas: Cacao amargo, Frutos secos, Especias</p>
+                    <h3>Veralto Edición Especial (500g)</h3>
+                    <p class="notes"><i class="fa-solid fa-mug-saucer"></i> Notas: Frutos rojos, caramelo tostado y aroma floral.</p>
                     <div class="price-action">
-                        <span class="price">$15.00</span>
-                        <button class="btn-add" onclick="addToCart('Veralto Tueste Intenso', 15.00)">
-                            <i class="fa-solid fa-plus"></i> Agregar
+                        <span class="price">$34.000 COP</span>
+                        <button class="btn-add" onclick="addToCart('Veralto Edición Especial 500g', 34000)">
+                            <i class="fa-solid fa-cart-plus"></i> Agregar
                         </button>
                     </div>
                 </div>
@@ -148,17 +174,17 @@
 
             <!-- Producto 3 -->
             <div class="product-card reveal-on-scroll">
-                <div class="product-badge">Edición Limitada</div>
+                <div class="product-badge dark">Tueste Intenso</div>
                 <div class="product-img">
-                    <img src="https://images.unsplash.com/photo-1611854779393-1b2da9d400fe?q=80&w=500&auto=format&fit=crop" alt="Veralto Geisha Reserva">
+                    <img src="https://images.unsplash.com/photo-1587734195503-904fca47e0e9?q=80&w=500&auto=format&fit=crop" alt="Veralto Tueste Oscuro">
                 </div>
                 <div class="product-info">
-                    <h3>Veralto Reserva Especial</h3>
-                    <p class="notes">Notas: Jasmine, Bergamota, Miel silvestre</p>
+                    <h3>Veralto Tueste Intenso (500g)</h3>
+                    <p class="notes"><i class="fa-solid fa-mug-saucer"></i> Notas: Cacao amargo, nuez tostada y especias dulce.</p>
                     <div class="price-action">
-                        <span class="price">$22.00</span>
-                        <button class="btn-add" onclick="addToCart('Veralto Reserva Especial', 22.00)">
-                            <i class="fa-solid fa-plus"></i> Agregar
+                        <span class="price">$30.000 COP</span>
+                        <button class="btn-add" onclick="addToCart('Veralto Tueste Intenso 500g', 30000)">
+                            <i class="fa-solid fa-cart-plus"></i> Agregar
                         </button>
                     </div>
                 </div>
@@ -167,36 +193,110 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer id="contacto" class="footer">
+    <!-- Sección de Registro (EmailJS Integrado) -->
+    <section id="comunidad" class="newsletter-section">
+        <div class="newsletter-box reveal-on-scroll">
+            <i class="fa-solid fa-envelope-open-text newsletter-icon"></i>
+            <h2>Únete al Club Café Veralto</h2>
+            <p>Regístrate con tu correo y recibe descuentos exclusivos, guías de preparación en casa y ofertas directas.</p>
+            
+            <form id="newsletterForm" class="newsletter-form">
+                <div class="input-group">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="text" id="custName" placeholder="Tu nombre completo" required>
+                </div>
+                <div class="input-group">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input type="email" id="custEmail" placeholder="Tu correo electrónico" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">
+                    <i class="fa-solid fa-paper-plane"></i> Unirme Gratis
+                </button>
+            </form>
+            <div id="newsletterMsg" class="form-message"></div>
+        </div>
+    </section>
+
+    <!-- Sidebar Carrito de Compras -->
+    <aside class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3><i class="fa-solid fa-cart-shopping"></i> Tu Carrito</h3>
+            <button class="close-cart" id="closeCart">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <p class="empty-msg">El carrito está vacío</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total a Pagar:</span>
+                <span id="cartTotal">$0 COP</span>
+            </div>
+            <button class="btn btn-primary btn-block" onclick="openCheckoutModal()">
+                <i class="fa-brands fa-whatsapp"></i> Finalizar Pedido por WhatsApp
+            </button>
+        </div>
+    </aside>
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <!-- Modal Formulario de Datos para WhatsApp -->
+    <div class="modal" id="checkoutModal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeCheckoutModal()">&times;</button>
+            <h3><i class="fa-brands fa-whatsapp color-whatsapp"></i> Datos para tu Envío</h3>
+            <p class="modal-subtitle">Dinos dónde entregamos tu café para generar la orden de compra:</p>
+            
+            <form id="whatsappForm" onsubmit="sendOrderToWhatsApp(event)">
+                <div class="form-group">
+                    <label><i class="fa-solid fa-user"></i> Nombre Completo:</label>
+                    <input type="text" id="orderName" placeholder="Ej: José Sierra" required>
+                </div>
+                <div class="form-group">
+                    <label><i class="fa-solid fa-phone"></i> Teléfono / Celular:</label>
+                    <input type="tel" id="orderPhone" placeholder="Ej: 300 123 4567" required>
+                </div>
+                <div class="form-group">
+                    <label><i class="fa-solid fa-location-dot"></i> Ciudad y Dirección de Entrega:</label>
+                    <input type="text" id="orderAddress" placeholder="Ej: Bucaramanga, Calle 36 # 15-20" required>
+                </div>
+                <div class="form-group">
+                    <label><i class="fa-solid fa-comment-dots"></i> Observaciones (Opcional):</label>
+                    <input type="text" id="orderNotes" placeholder="Ej: Café molido para cafetera de goteo">
+                </div>
+
+                <button type="submit" class="btn btn-whatsapp btn-block">
+                    <i class="fa-brands fa-whatsapp"></i> Enviar Pedido a WhatsApp
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer / Pie de Página -->
+    <footer class="footer">
         <div class="footer-container">
             <div class="footer-col">
                 <a href="#" class="logo text-white">VERALTO<span>.</span></a>
-                <p>Elevando el estándar del café de especialidad todos los días.</p>
+                <p>Pasión y tradición cafetera cultivada artesanalmente en Curití, Santander, Colombia.</p>
             </div>
             <div class="footer-col">
-                <h4>Enlaces Rápidos</h4>
+                <h4>Navegación</h4>
                 <ul>
                     <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#nosotros">Historia</a></li>
+                    <li><a href="#curiti">Origen Curití</a></li>
                     <li><a href="#tienda">Tienda</a></li>
                 </ul>
             </div>
             <div class="footer-col">
-                <h4>Síguenos</h4>
-                <div class="social-links">
-                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="#"><i class="fa-brands fa-tiktok"></i></a>
-                </div>
+                <h4>Contacto Directo</h4>
+                <p><i class="fa-solid fa-location-dot"></i> Curití, Santander - Colombia</p>
+                <p><i class="fa-brands fa-whatsapp"></i> +57 302 6604210</p>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 Veralto Coffee. Todos los derechos reservados.</p>
+            <p>&copy; 2026 Café Veralto. Todos los derechos reservados.</p>
         </div>
     </footer>
 
-    <!-- JS -->
+    <!-- Archivo JS Principal -->
     <script src="js/main.js"></script>
 </body>
 </html>
